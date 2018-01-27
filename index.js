@@ -7,22 +7,23 @@ class Block {
     this.hash = hash;
     this.nonce = nonce;
   }
-
-  static genesis() {
-    return new Block(
-      0,
-      "0",
-      1508270000000,
-      "Block data!",
-      "HASH-123456-HASH", // todo create hash
-      0
-    );
+  
+  createHash() {
+    
+  }
+  
+  mine() {
+    
   }
 }
 
 class Blockchain {
   constructor() {
-    this.blockchain = [Block.genesis()];
+    this.blockchain = [this.createGenesis()];
+  }
+  
+  createGenesis(){
+    return new Block();
   }
 
   get() {
